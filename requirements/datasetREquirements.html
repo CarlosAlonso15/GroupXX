@@ -41,48 +41,47 @@
     <table>
         <tr>
             <th>Requisito</th>
-            <th>Descripción</th>
-            <th>Estado / Grado</th>
-            <th>Justificación</th>
+            <th>Tipo</th>
+            <th>Descripción del Requisito</th>
+            <th>Cumplimiento y Discusión</th>
         </tr>
         <tr>
             <td><strong>R1</strong></td>
-            <td>Dominio de Smart City seleccionado</td>
-            <td><span class="satisfied">Satisfecho</span></td>
-            <td>Los datasets pertenecen inequívocamente a los dominios de <strong>Movilidad Urbana Sostenible</strong> (Aparcabicis) y <strong>Medio Ambiente Urbano</strong> (Calidad del aire).</td>
+            <td>Obligatorio</td>
+            <td>Datos en un dominio de smart city seleccionado.</td>
+            <td><span class="satisfied">Satisfecho</span>. Ambos datasets pertenecen claramente a movilidad sostenible y medio ambiente urbano.</td>
         </tr>
         <tr>
             <td><strong>R2</strong></td>
-            <td>Disponibilidad en formato CSV</td>
-            <td><span class="satisfied">Satisfecho</span></td>
-            <td>Ambos datasets han sido descargados directamente y están disponibles en formato CSV estructurado (delimitados por comas o puntos y comas listos para procesar).</td>
+            <td>Obligatorio</td>
+            <td>Disponibilidad como fichero CSV.</td>
+            <td><span class="satisfied">Satisfecho</span>. Los dos ficheros descargados están en formato CSV estructurado.</td>
         </tr>
         <tr>
             <td><strong>R3</strong></td>
-            <td>Licencia abierta para publicación</td>
-            <td><span class="satisfied">Satisfecho</span></td>
-            <td>Provienen del portal oficial de datos abiertos del Ayuntamiento de Madrid, el cual aplica licencias de uso abierto (Creative Commons Attribution o similar) que permiten su reutilización y publicación.</td>
+            <td>Obligatorio</td>
+            <td>Licencia abierta para su publicación.</td>
+            <td><span class="satisfied">Satisfecho</span>. Cuentan con licencia abierta de reutilización del portal municipal de Madrid.</td>
         </tr>
         <tr>
             <td><strong>R4</strong></td>
-            <td>Vinculación sencilla con entidades del mundo real</td>
-            <td><span class="satisfied">Satisfecho</span></td>
-            <td>Ambos datasets incluyen datos espaciales (coordenadas de latitud/longitud o referencias a distritos y barrios), lo que permite enlazarlos geográficamente de manera directa.</td>
+            <td>Obligatorio</td>
+            <td>Fácil vinculación con entidades del mundo real (ej. ubicaciones).</td>
+            <td><span class="satisfied">Satisfecho</span>. Incorporan coordenadas geográficas (latitud/longitud) y referencias a distritos.</td>
         </tr>
         <tr>
             <td><strong>R5</strong></td>
-            <td>Documentación existente (Opcional)</td>
-            <td><span class="satisfied">Satisfecho (Alto)</span></td>
-            <td>El portal de datos abiertos proporciona diccionarios de datos detallados que explican el significado de cada columna, los códigos de contaminantes y las unidades de medida.</td>
+            <td>Opcional</td>
+            <td>Existencia de documentación para los datos.</td>
+            <td><span class="partial">Grado de satisfacción: Alto</span>. El portal incluye descripciones detalladas de los campos, aunque la especificación formal del esquema de metadatos externo es limitada.</td>
         </tr>
         <tr>
             <td><strong>R6</strong></td>
-            <td>Procedencia de múltiples fuentes (Opcional)</td>
-            <td><span class="satisfied">Satisfecho (Alto)</span></td>
-            <td>Los datos combinan dos fuentes institucionales independientes gestionadas por el ayuntamiento: la Dirección General de Sostenibilidad y Control Ambiental (Calidad del Aire) y la Concejalía de Movilidad (Aparcabicis).</td>
+            <td>Opcional</td>
+            <td>Procedencia de múltiples fuentes de datos.</td>
+            <td><span class="partial">Grado de satisfacción: Alto</span>. Los datos combinan dos áreas institucionales y operativas diferentes dentro del ayuntamiento (Movilidad y Sostenibilidad Ambiental).</td>
         </tr>
     </table>
-
     <h2>3. Conclusión</h2>
     <p>Los datasets seleccionados satisfacen plenamente los requisitos obligatorios (R1 a R4) y presentan un grado óptimo de satisfacción en los requisitos opcionales (R5 y R6). Esto garantiza una base sólida para su posterior transformación a RDF, enriquecimiento e integración en la aplicación propuesta.</p>
 
