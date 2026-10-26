@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Análisis de Requisitos de los Datasets - BiciClean Urban</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; color: #333; }
+        h1, h2, h3 { color: #2c3e50; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; }
+        .satisfied { color: green; font-weight: bold; }
+        .partial { color: orange; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>Análisis de Requisitos de los Datasets</h1>
+    <p>Este documento analiza el grado de cumplimiento de los requisitos establecidos para los datasets seleccionados por el grupo para el desarrollo del proyecto de Grafos de Conocimiento en el dominio de Smart Cities.</p>
+
+    <h2>1. Datasets Seleccionados</h2>
+    <ul>
+        <li><strong>Dataset 1: Aparcabicis en Madrid</strong>
+            <ul>
+                <li><strong>Fuente:</strong> Portal de Datos Abiertos del Ayuntamiento de Madrid.</li>
+                <li><strong>Fichero:</strong> <code>205099-2-aparca-bicis.csv</code></li>
+                <li><strong>Descripción:</strong> Contiene la ubicación espacial (coordenadas geográficas), dirección, tipo de soporte y número de plazas de los aparcabicis instalados en la vía pública.</li>
+            </ul>
+        </li>
+        <li><strong>Dataset 2: Calidad del Aire y Datos Meteorológicos</strong>
+            <ul>
+                <li><strong>Fuente:</strong> Portal de Datos Abiertos del Ayuntamiento de Madrid.</li>
+                <li><strong>Fichero:</strong> <code>calidad_aire_datos_meteo_mes.csv</code></li>
+                <li><strong>Descripción:</strong> Contiene registros periódicos de las estaciones de medición de contaminantes atmosféricos y variables meteorológicas de la ciudad.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>2. Evaluación de Requisitos</h2>
+
+    <table>
+        <tr>
+            <th>Requisito</th>
+            <th>Descripción</th>
+            <th>Estado / Grado</th>
+            <th>Justificación</th>
+        </tr>
+        <tr>
+            <td><strong>R1</strong></td>
+            <td>Dominio de Smart City seleccionado</td>
+            <td><span class="satisfied">Satisfecho</span></td>
+            <td>Los datasets pertenecen inequívocamente a los dominios de <strong>Movilidad Urbana Sostenible</strong> (Aparcabicis) y <strong>Medio Ambiente Urbano</strong> (Calidad del aire).</td>
+        </tr>
+        <tr>
+            <td><strong>R2</strong></td>
+            <td>Disponibilidad en formato CSV</td>
+            <td><span class="satisfied">Satisfecho</span></td>
+            <td>Ambos datasets han sido descargados directamente y están disponibles en formato CSV estructurado (delimitados por comas o puntos y comas listos para procesar).</td>
+        </tr>
+        <tr>
+            <td><strong>R3</strong></td>
+            <td>Licencia abierta para publicación</td>
+            <td><span class="satisfied">Satisfecho</span></td>
+            <td>Provienen del portal oficial de datos abiertos del Ayuntamiento de Madrid, el cual aplica licencias de uso abierto (Creative Commons Attribution o similar) que permiten su reutilización y publicación.</td>
+        </tr>
+        <tr>
+            <td><strong>R4</strong></td>
+            <td>Vinculación sencilla con entidades del mundo real</td>
+            <td><span class="satisfied">Satisfecho</span></td>
+            <td>Ambos datasets incluyen datos espaciales (coordenadas de latitud/longitud o referencias a distritos y barrios), lo que permite enlazarlos geográficamente de manera directa.</td>
+        </tr>
+        <tr>
+            <td><strong>R5</strong></td>
+            <td>Documentación existente (Opcional)</td>
+            <td><span class="satisfied">Satisfecho (Alto)</span></td>
+            <td>El portal de datos abiertos proporciona diccionarios de datos detallados que explican el significado de cada columna, los códigos de contaminantes y las unidades de medida.</td>
+        </tr>
+        <tr>
+            <td><strong>R6</strong></td>
+            <td>Procedencia de múltiples fuentes (Opcional)</td>
+            <td><span class="satisfied">Satisfecho (Alto)</span></td>
+            <td>Los datos combinan dos fuentes institucionales independientes gestionadas por el ayuntamiento: la Dirección General de Sostenibilidad y Control Ambiental (Calidad del Aire) y la Concejalía de Movilidad (Aparcabicis).</td>
+        </tr>
+    </table>
+
+    <h2>3. Conclusión</h2>
+    <p>Los datasets seleccionados satisfacen plenamente los requisitos obligatorios (R1 a R4) y presentan un grado óptimo de satisfacción en los requisitos opcionales (R5 y R6). Esto garantiza una base sólida para su posterior transformación a RDF, enriquecimiento e integración en la aplicación propuesta.</p>
+
+</body>
+</html>

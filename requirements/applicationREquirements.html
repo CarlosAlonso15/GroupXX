@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Requisitos de la Aplicación - BiciClean Urban</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; color: #333; }
+        h1, h2, h3 { color: #2c3e50; }
+        .mockup-box { background: #f9f9f9; border: 2px dashed #ccc; padding: 20px; margin: 20px 0; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>Requisitos de la Aplicación: BiciClean Urban</h1>
+    <p>Este documento especifica los requisitos funcionales y de interfaz de la aplicación que se construirá sobre el grafo de conocimiento generado a partir de los datasets de aparcabicis y calidad del aire de Madrid.</p>
+
+    <h2>1. Descripción General</h2>
+    <p><strong>BiciClean Urban</strong> es una aplicación web de movilidad sostenible diseñada para ciclistas urbanos. Su objetivo principal es permitir a los usuarios localizar aparcabicis públicos en Madrid cruzando esta información con los niveles de contaminación atmosférica en tiempo real o histórica, fomentando rutas y estacionamientos más saludables.</p>
+
+    <h2>2. Requisitos Funcionales</h2>
+    <ul>
+        <li><strong>RF1: Visualización geolocalizada.</strong> Mostrar un mapa interactivo de Madrid con la ubicación de todos los aparcabicis disponibles.</li>
+        <li><strong>RF2: Filtrado ambiental por zonas.</strong> Colorear o alertar sobre los aparcabicis situados en áreas con diferentes niveles de calidad del aire (basado en los datos de las estaciones meteorológicas y de contaminación cercanas).</li>
+        <li><strong>RF3: Consulta de detalles del aparcabicis.</strong> Al hacer clic en un punto de aparcamiento, mostrar el número de plazas, tipo de soporte y un indicador del aire medio en su entorno.</li>
+    </ul>
+
+    <h2>3. Mock-ups de las Interfaces de Usuario</h2>
+    
+    <div class="mockup-box">
+        <h3>Mock-up 1: Pantalla Principal / Mapa Interactivo</h3>
+        <p><em>[ Esbozo de la interfaz ]</em></p>
+        <ul>
+            <li><strong>Cabecera:</strong> Logotipo "BiciClean Urban" y barra de búsqueda por distrito o calle.</li>
+            <li><strong>Cuerpo central:</strong> Mapa de la ciudad de Madrid con iconos de aparcabicis codificados por colores (Verde = Buena calidad de aire, Naranja = Moderada, Rojo = Desfavorable).</li>
+            <li><strong>Panel lateral:</strong> Leyenda del mapa y filtros rápidos (mostrar solo plazas libres / mostrar zonas de bajas emisiones).</li>
+        </ul>
+    </div>
+
+    <div class="mockup-box">
+        <h3>Mock-up 2: Ficha de Detalle del Aparcabicis</h3>
+        <p><em>[ Esbozo de la interfaz ]</em></p>
+        <ul>
+            <li>Ventana emergente (pop-up) al seleccionar un aparcabicis en el mapa.</li>
+            <li><strong>Información estructural:</strong> Dirección postal, plazas totales y tipo de estructura.</li>
+            <li><strong>Métrica ambiental:</strong> Estación de calidad del aire de referencia más cercana e índice de contaminantes ($NO_2$, $PM_{2.5}$) en esa ubicación específica.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
