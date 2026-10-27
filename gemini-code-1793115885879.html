@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis del Dataset y Estrategia de Recursos - Vehículos Eléctricos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; color: #333; max-width: 1200px; margin: auto; padding: 20px; }
+        h1, h2, h3 { color: #2c3e50; }
+        h1 { border-bottom: 2px solid #2c3e50; padding-bottom: 10px; }
+        h2 { margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #f4f4f4; color: #2c3e50; }
+        code { background: #f9f9f9; padding: 2px 5px; border-radius: 3px; font-family: monospace; color: #c7254e; }
+        .highlight { background: #fcf8e3; padding: 15px; border-left: 5px solid #f0ad4e; margin: 20px 0; }
+    </style>
+</head>
+<body>
+
+    <h1>Análisis del Dataset y Estrategia de Nombrado de Recursos</h1>
+    <p>Documento de análisis técnico correspondiente a la segunda práctica (<em>Hands-on Assignment 2</em>) del proceso de generación de Datos Enlazados (Linked Data).</p>
+
+    <h2>1. Análisis del Dataset (Analyse Data Set)</h2>
+    <p>El dataset analizado corresponde al inventario público de <strong>puntos de recarga de vehículos eléctricos</strong> en la ciudad de Madrid, ubicado en el repositorio del grupo bajo la ruta <code>csv/vehiculos_electricos.csv</code>.</p>
+    
+    <h3>1.1. Análisis Cuantitativo y Estructural</h3>
+    <ul>
+        <li><strong>Volumen de datos:</strong> El fichero contiene un total de <strong>122 registros</strong> (estaciones de recarga) distribuidos en la vía pública y aparcamientos municipales.</li>
+        <li><strong>Estructura de columnas (Esquema):</strong> El dataset consta de 12 atributos descriptivos:
+            <ul>
+                <li><code>COD_DIS</code> / <code>DISTRITO</code>: Código numérico y nombre del distrito administrativo de Madrid.</li>
+                <li><code>COD_BAR</code> / <code>BARRIO</code>: Código numérico y nombre del barrio correspondiente.</li>
+                <li><code>UBICACIÓN</code> / <code>EMPLAZAMIE</code>: Dirección postal descriptiva del punto y tipo de emplazamiento (vía pública, etc.).</li>
+                <li><code>INFO_ADICI</code>: Información adicional de interés sobre la localización o acceso.</li>
+                <li><code>Nº_EQUIPO</code>: Identificador numérico del equipo de recarga.</li>
+                <li><code>CARACTERÍ</code>: Especificaciones técnicas de potencia y tipos de conectores (ej. <em>50 kW 2 conectores CC y 1 conector AC</em>).</li>
+                <li><code>OPERADOR</code>: Empresa o entidad gestora del punto de recarga (ej. IBERDROLA, WENEA, etc.).</li>
+                <li><code>POINT_X</code> / <code>POINT_Y</code>: Coordenadas espaciales proyectadas (sistema métrico UTM / EPSG:25830).</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>1.2. Rangos de Valores y Tipos</h3>
+    <p>Los datos presentan una alta consistencia, con variables de texto para denominaciones administrativas, cadenas normalizadas para operadores y valores numéricos proyectados en coordenadas espaciales que permiten su conversión directa a coordenadas geográficas estandarizadas (WGS84).</p>
+
+    <h2>2. Análisis de Licenciamiento (Analyse Licensing)</h2>
+    <table>
+        <tr>
+            <th>Aspecto</th>
+            <th>Detalle</th>
+        </tr>
+        <tr>
+            <td><strong>Editor / Titular de los Derechos</strong></td>
+            <td>Ayuntamiento de Madrid (Portal de Datos Abiertos).</td>
+        </tr>
+        <tr>
+            <td><strong>Licencia Actual de la Fuente</strong></td>
+            <td>Licencia abierta municipal de reutilización de datos, permitiendo la copia, distribución, modificación y explotación comercial y no comercial bajo mención de autoría.</td>
+        </tr>
+        <tr>
+            <td><strong>Licencia Potencial a Utilizar</strong></td>
+            <td>Se adoptará la licencia estándar <code>Creative Commons Attribution 4.0 International (CC BY 4.0)</code> para el grafo de conocimiento y los ficheros RDF generados, garantizando la interoperabilidad y apertura de los datos enlazados.</td>
+        </tr>
+    </table>
+
+    <h2>3. Estrategia de Nombrado de Recursos (Resource Naming Strategy)</h2>
+    <p>Para asegurar la persistencia, limpieza y cumplimiento de las recomendaciones del W3C en la Web Semántica, se ha diseñado la siguiente política de URIs:</p>
+    
+    <h3>3.1. Dominio Base</h3>
+    <p>Se establece un dominio base orientado al proyecto de Smart City del grupo:</p>
+    <p><code>http://smartcity.example.org/group01/</code></p>
+
+    <h3>3.2. Patrones de URIs</h3>
+    <ul>
+        <li><strong>Ontología (Esquema, Clases y Propiedades):</strong> 
+            <br><code>http://smartcity.example.org/group01/ontology#</code>
+            <br><em>Ejemplo de clase:</em> <code>http://smartcity.example.org/group01/ontology#ChargingStation</code>
+        </li>
+        <li><strong>Instancias (Recursos de datos individuales extraídos del CSV):</strong> 
+            <br><code>http://smartcity.example.org/group01/resource/{tipo}/{id}</code>
+            <br><em>Ejemplo de instancia:</em> <code>http://smartcity.example.org/group01/resource/ChargingStation/EV-001</code>
+        </li>
+    </ul>
+
+    <h3>3.3. Negociación de Contenido (Content Negotiation)</h3>
+    <p>El servidor web implementará mecanismos de negociación de contenido HTTP mediante las cabeceras <code>Accept</code>, permitiendo que los usuarios humanos obtiendan una representación visual en formato <strong>HTML</strong> y los agentes software o aplicaciones semánticas reciban los datos estructurados en formatos RDF como <strong>Turtle</strong> o <strong>RDF/XML</strong>.</p>
+
+    <div class="highlight">
+        <strong>Nota de implementación:</strong> Este esquema sienta las bases para la posterior conversión de los 122 registros del CSV en triples RDF utilizando la ontología ligera desarrollada en el entregable <code>ontology/vehiculos-electricos.ttl</code>.
+    </div>
+
+</body>
+</html>
